@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 import argparse
 
-from zvt.core import IntervalLevel
-from zvt.core.recorder import FixedCycleDataRecorder
-from zvt.core.utils.time_utils import to_pd_timestamp
 from zvt import init_log
 from zvt.api.common import get_kdata_schema, generate_kdata_id, CoinTickCommon
-from zvt_ccxt import COIN_EXCHANGES, COIN_PAIRS
+from zvt.core import IntervalLevel
+from zvt.core.recorder import FixedCycleDataRecorder
+from zvt.utils.time_utils import to_pd_timestamp
 from zvt_ccxt.accounts import CCXTAccount
-from zvt_ccxt.schema import Coin
+from zvt_ccxt.domain import Coin
+from zvt_ccxt.settings import COIN_EXCHANGES, COIN_PAIRS
 
 
 class CoinTickRecorder(FixedCycleDataRecorder):

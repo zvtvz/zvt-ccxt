@@ -2,9 +2,9 @@ import pandas as pd
 
 from zvt.core.api import df_to_db
 from zvt.core.recorder import Recorder
-from zvt_ccxt import COIN_PAIRS, COIN_EXCHANGES
 from zvt_ccxt.accounts import CCXTAccount
-from zvt_ccxt.schema import Coin
+from zvt_ccxt.domain import Coin
+from zvt_ccxt.settings import COIN_EXCHANGES, COIN_PAIRS
 
 
 class CoinMetaRecorder(Recorder):

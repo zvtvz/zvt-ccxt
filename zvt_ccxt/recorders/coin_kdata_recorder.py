@@ -7,10 +7,10 @@ from zvt.core import IntervalLevel
 from zvt.core.recorder import FixedCycleDataRecorder
 from zvt.utils.time_utils import to_pd_timestamp
 from zvt.utils.time_utils import to_time_str
-from zvt_ccxt import COIN_EXCHANGES, COIN_PAIRS
 from zvt_ccxt.accounts import CCXTAccount
 from zvt_ccxt.recorders import to_ccxt_trading_level
-from zvt_ccxt.schema import Coin, CoinKdataCommon
+from zvt_ccxt.domain import Coin, CoinKdataCommon
+from zvt_ccxt.settings import COIN_EXCHANGES, COIN_PAIRS
 
 
 class CoinKdataRecorder(FixedCycleDataRecorder):
