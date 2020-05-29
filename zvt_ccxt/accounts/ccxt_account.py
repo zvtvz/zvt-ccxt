@@ -4,7 +4,7 @@ import json
 import ccxt
 
 from zvt import zvt_env
-from zvt_ccxt import COIN_EXCHANGES
+from zvt_ccxt.settings import COIN_EXCHANGES
 
 
 class CCXTAccount(object):
