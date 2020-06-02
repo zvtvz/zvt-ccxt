@@ -1,4 +1,4 @@
-from zvt.domain import KdataCommon, TickCommon
+from zvt.schemas import KdataCommon, TickCommon
 
 
 class CoinKdataCommon(KdataCommon):

@@ -8,5 +8,5 @@ def zvt_setup_env(config: dict):
     return "zvt_ccxt", CCXTAccount.exchange_conf
 
 
-from zvt_ccxt.domain import *
+from zvt_ccxt.schemas import *
 from zvt_ccxt.recorders import *

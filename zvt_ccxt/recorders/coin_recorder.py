@@ -1,9 +1,9 @@
 import pandas as pd
 
-from zvt.core.api import df_to_db
-from zvt.core.recorder import Recorder
+from zvt.contract.api import df_to_db
+from zvt.contract.recorder import Recorder
 from zvt_ccxt.accounts import CCXTAccount
-from zvt_ccxt.domain import Coin
+from zvt_ccxt.schemas import Coin
 from zvt_ccxt.settings import COIN_EXCHANGES, COIN_PAIRS
 
 

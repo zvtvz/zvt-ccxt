@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from zvt.core import IntervalLevel
+from zvt.contract import IntervalLevel
 
 
 def to_ccxt_trading_level(trading_level: IntervalLevel):
