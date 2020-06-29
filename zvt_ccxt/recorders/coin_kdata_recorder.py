@@ -2,14 +2,14 @@
 import argparse
 
 from zvt import init_log
-from zvt.api.common import generate_kdata_id, get_kdata_schema
+from zvt.api import generate_kdata_id, get_kdata_schema
 from zvt.contract import IntervalLevel
 from zvt.contract.recorder import FixedCycleDataRecorder
 from zvt.utils.time_utils import to_pd_timestamp
 from zvt.utils.time_utils import to_time_str
 from zvt_ccxt.accounts import CCXTAccount
+from zvt_ccxt.domain import Coin, CoinKdataCommon
 from zvt_ccxt.recorders import to_ccxt_trading_level
-from zvt_ccxt.schemas import Coin, CoinKdataCommon
 from zvt_ccxt.settings import COIN_EXCHANGES, COIN_PAIRS
 
 

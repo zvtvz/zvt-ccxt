@@ -1,3 +1,4 @@
 include README.md
 include LICENSE
 include zvt_ccxt/accounts/*.json
+include *.txt

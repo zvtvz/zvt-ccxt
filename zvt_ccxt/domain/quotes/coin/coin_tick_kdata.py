@@ -3,7 +3,7 @@
 from sqlalchemy.ext.declarative import declarative_base
 
 from zvt.contract.register import register_schema
-from zvt_ccxt.schemas.quotes import CoinTickCommon
+from zvt_ccxt.domain.quotes import CoinTickCommon
 
 KdataBase = declarative_base()
 
