@@ -31,7 +31,7 @@ except:
 
 setup(
     name="zvt-ccxt",
-    version='0.0.4',
+    version='0.0.5',
     description='ccxt cryptocurrency plugin for zvt ',
     install_requires=requirements,
     entry_points={"zvt": ["ccxt = zvt_ccxt"]},
