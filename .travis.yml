@@ -4,9 +4,13 @@ python:
   - '3.6'
 install:
   - git fetch --tags --depth=500
+  - pip install 'pytest>=3.6' --force-reinstall
+  - pip install pytest-cov codecov
   - pip install -r ./requirements.txt
-  - pip install .
-script: pytest
+script:
+  - pytest  tests/ --cov-report term --cov=./zvt
+after_success:
+  - codecov
 deploy:
   provider: pypi
   user: __token__

@@ -31,7 +31,7 @@ except:
 
 setup(
     name="zvt-ccxt",
-    version='0.0.3',
+    version='0.0.4',
     description='ccxt cryptocurrency plugin for zvt ',
     install_requires=requirements,
     entry_points={"zvt": ["ccxt = zvt_ccxt"]},
@@ -41,7 +41,7 @@ setup(
         'zvt_ccxt.accounts': ['*.json']
     },
     long_description=long_description,
-    url='https://github.com/zvtvz/zvt',
+    url='https://github.com/zvtvz/zvt-ccxt',
     author='foolcage',
     author_email='5533061@qq.com',
     classifiers=[  # Optional
