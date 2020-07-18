@@ -4,13 +4,14 @@ python:
   - '3.6'
 install:
   - git fetch --tags --depth=500
-  - pip install 'pytest>=3.6' --force-reinstall
   - pip install -r ./requirements.txt
+  - pip install .
+script: pytest
 deploy:
   provider: pypi
-  user: "__token__"
+  user: __token__
   password:
-    secure: "H3TYEk0pyjYqOCrYQHmuVCfBnmyup1TsUA5tJOBzBHnO8SUN435ZttfytN6rOdfk3Z9fMoimud4vbdb+UfWO8ECimxQIhjPj91BGlh7p0u583ODWHLWcInvFkmPPRWM4orjHwVkULu0aeTtsHvPINWnSqixd1AgwsmAnwFeFCMcDBy+cMXpd7NwMhqbyZe8ovbtK/eewo+PGy82V1t7Em9hFahodkNsshSsL+U/39XXpX4LMU2bwtYgOHHAFC/xpCBsZVvwmbjp9T5aRTdcCzEeWU7/pqtBVHkbf5xtRQ9GOOCHBGASPx0szMrAoFPTVktf5u1lf3rOY0racbeenD5JkVvwERRvuxRli+Ykei+JmTUM5KaT/Yh0gkzJhabKXSjEkhS3r10hHZhqO/yjyLthc78R+xB4o8YCA/nbKnWnwUCit64IpjGasOcUQkqn2UTiv6lq7OO519BA4jnhwTJKLYrVRdblSFMqqpf9acmX3YuNySDwZPGkdk9/T0v+DTQEDyN8RUi85x2udjBLmAqOvTAZmvq5wP04PDXFx7LgOKld9YhrZtbB1fHmGtercbiKr7YaYY+S8Bye7F/vvJyHezjbpDLXAtvmc642Q8bZaiSCOeD92mcu8seLDrIOWpzbHXEhJz2EA7QClTI4ldS5p6Ea9xAM6/qTMG5aPN94="
+    secure: H3TYEk0pyjYqOCrYQHmuVCfBnmyup1TsUA5tJOBzBHnO8SUN435ZttfytN6rOdfk3Z9fMoimud4vbdb+UfWO8ECimxQIhjPj91BGlh7p0u583ODWHLWcInvFkmPPRWM4orjHwVkULu0aeTtsHvPINWnSqixd1AgwsmAnwFeFCMcDBy+cMXpd7NwMhqbyZe8ovbtK/eewo+PGy82V1t7Em9hFahodkNsshSsL+U/39XXpX4LMU2bwtYgOHHAFC/xpCBsZVvwmbjp9T5aRTdcCzEeWU7/pqtBVHkbf5xtRQ9GOOCHBGASPx0szMrAoFPTVktf5u1lf3rOY0racbeenD5JkVvwERRvuxRli+Ykei+JmTUM5KaT/Yh0gkzJhabKXSjEkhS3r10hHZhqO/yjyLthc78R+xB4o8YCA/nbKnWnwUCit64IpjGasOcUQkqn2UTiv6lq7OO519BA4jnhwTJKLYrVRdblSFMqqpf9acmX3YuNySDwZPGkdk9/T0v+DTQEDyN8RUi85x2udjBLmAqOvTAZmvq5wP04PDXFx7LgOKld9YhrZtbB1fHmGtercbiKr7YaYY+S8Bye7F/vvJyHezjbpDLXAtvmc642Q8bZaiSCOeD92mcu8seLDrIOWpzbHXEhJz2EA7QClTI4ldS5p6Ea9xAM6/qTMG5aPN94=
   on:
     tags: true
 notifications:
