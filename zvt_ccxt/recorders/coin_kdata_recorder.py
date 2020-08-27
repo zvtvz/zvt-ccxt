@@ -28,7 +28,7 @@ class CoinKdataRecorder(FixedCycleDataRecorder):
                  codes=None,
                  batch_size=10,
                  force_update=True,
-                 sleeping_time=10,
+                 sleeping_time=1,
                  default_size=2000,
                  real_time=False,
                  fix_duplicate_way='ignore',
