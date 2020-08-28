@@ -1,17 +1,17 @@
 import pandas as pd
-
 from zvt.contract.api import df_to_db
 from zvt.contract.recorder import Recorder
+
 from zvt_ccxt.accounts import CCXTAccount
 from zvt_ccxt.domain import Coin
-from zvt_ccxt.settings import COIN_EXCHANGES, COIN_PAIRS
+from zvt_ccxt.settings import COIN_EXCHANGES
 
 
 class CoinMetaRecorder(Recorder):
     provider = 'ccxt'
     data_schema = Coin
 
-    def __init__(self, batch_size=10, force_update=False, sleeping_time=10, exchanges=COIN_EXCHANGES) -> None:
+    def __init__(self, batch_size=10, force_update=False, sleeping_time=1, exchanges=COIN_EXCHANGES) -> None:
         super().__init__(batch_size, force_update, sleeping_time)
         self.exchanges = exchanges
 
@@ -30,6 +30,8 @@ class CoinMetaRecorder(Recorder):
 
                 aa = []
                 for market in markets:
+                    if not market['active']:
+                        continue
                     if markets_type == dict:
                         name = market
                         code = market
@@ -38,8 +40,7 @@ class CoinMetaRecorder(Recorder):
                         code = market['symbol']
                         name = market['symbol']
 
-                    if name not in COIN_PAIRS:
-                        continue
+
                     aa.append(market)
 
                     security_item = {
