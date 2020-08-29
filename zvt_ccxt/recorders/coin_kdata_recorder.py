@@ -7,6 +7,7 @@ from zvt.contract import IntervalLevel
 from zvt.contract.recorder import FixedCycleDataRecorder
 from zvt.utils.time_utils import to_pd_timestamp
 from zvt.utils.time_utils import to_time_str
+
 from zvt_ccxt.accounts import CCXTAccount
 from zvt_ccxt.domain import Coin, CoinKdataCommon
 from zvt_ccxt.recorders import to_ccxt_trading_level
@@ -50,8 +51,6 @@ class CoinKdataRecorder(FixedCycleDataRecorder):
         return generate_kdata_id(entity_id=entity.id, timestamp=original_data['timestamp'], level=self.level)
 
     def record(self, entity, start, end, size, timestamps):
-        start_timestamp = to_time_str(start)
-
         ccxt_exchange = CCXTAccount.get_ccxt_exchange(entity.exchange)
 
         if ccxt_exchange.has['fetchOHLCV']:
@@ -64,7 +63,7 @@ class CoinKdataRecorder(FixedCycleDataRecorder):
             if CCXTAccount.exchange_conf[entity.exchange]['support_since']:
                 kdatas = ccxt_exchange.fetch_ohlcv(entity.code,
                                                    timeframe=self.ccxt_trading_level,
-                                                   since=start_timestamp)
+                                                   since=int(start.timestamp() * 1000))
             else:
                 kdatas = ccxt_exchange.fetch_ohlcv(entity.code,
                                                    timeframe=self.ccxt_trading_level,
