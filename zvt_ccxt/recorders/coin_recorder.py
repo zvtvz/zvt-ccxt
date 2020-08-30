@@ -65,4 +65,4 @@ class CoinMetaRecorder(Recorder):
 __all__ = ["CoinMetaRecorder"]
 
 if __name__ == '__main__':
-    CoinMetaRecorder().run()
+    CoinMetaRecorder(exchanges=['ftx','binance','huobipro']).run()

@@ -60,7 +60,7 @@ class CoinKdataRecorder(FixedCycleDataRecorder):
 
             kdata_list = []
 
-            if CCXTAccount.exchange_conf[entity.exchange]['support_since']:
+            if CCXTAccount.exchange_conf[entity.exchange]['support_since'] and start:
                 kdatas = ccxt_exchange.fetch_ohlcv(entity.code,
                                                    timeframe=self.ccxt_trading_level,
                                                    since=int(start.timestamp() * 1000))
